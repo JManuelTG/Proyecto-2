@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::resource('servicios', ServicioController::class);
 
+Route::get('/landing', function () {
+    return view('landing');
+});
 
 Route::middleware([
     'auth:sanctum',
