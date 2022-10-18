@@ -25,7 +25,7 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        //
+        return view('servicios.servicioCreate');
     }
 
     /**
@@ -36,7 +36,15 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'plataforma' => 'required',
+            'juego' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required|max:255'
+        ]);
+
+        Servicio::create($request->all());
+        return redirect('/servicios');
     }
 
     /**
@@ -47,8 +55,7 @@ class ServicioController extends Controller
      */
     public function show(Servicio $servicio)
     {
-        $orden = Servicio::find($servicio);
-        return view('servicios.servicioShow', compact('orden'));
+        return view('servicios.servicioShow', compact('servicio'));
     }
 
     /**
@@ -59,7 +66,7 @@ class ServicioController extends Controller
      */
     public function edit(Servicio $servicio)
     {
-        //
+        return view('servicios.servicioEdit', compact('servicio'));
     }
 
     /**
@@ -71,7 +78,19 @@ class ServicioController extends Controller
      */
     public function update(Request $request, Servicio $servicio)
     {
-        //
+        $request->validate([
+            'plataforma' => 'required',
+            'juego' => 'required',
+            'precio' => 'required',
+            'descripcion' => 'required|max:255'
+        ]);
+
+        $servicio->plataforma = $request->plataforma;
+        $servicio->juego = $request->juego;
+        $servicio->precio = $request->precio;
+        $servicio->descripcion = $request->descripcion;
+        $servicio->save();
+        return redirect('/servicios');
     }
 
     /**
@@ -82,6 +101,7 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
-        //
+        $servicio->delete();
+        return redirect('/servicios');
     }
 }

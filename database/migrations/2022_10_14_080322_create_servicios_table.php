@@ -17,10 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('plataforma');
             $table->string('juego');
-            $table->integer('precio');
-            $table->string('descripcion');
-            $table->string('pro')->nullable($value = true);
-            $table->timestamps();
+            $table->smallInteger('precio')->unsigned()->default(0);
+            $table->string('descripcion')->nullable(true);
+            $table->string('pro')->nullable(true);
         });
     }
 
