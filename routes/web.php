@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('servicios', ServicioController::class);
+Route::resource('servicios', ServicioController::class)->middleware('auth');
 
 Route::get('/landing', function () {
     return view('landing');
