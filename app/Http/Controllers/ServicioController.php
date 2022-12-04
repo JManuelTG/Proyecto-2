@@ -14,14 +14,15 @@ class ServicioController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct(){
-        $this->middleware('auth')->except('index');
-    }
+    // public function __construct(){
+    //     $this->middleware('auth')->except('index');
+    // }
 
 
     public function index()
     {
-        $servicios = Servicio::all();
+        $servicios = Servicio::with('User')->get();
+        //$servicios = Servicio::all();
         // $user = Auth::user();
         // $servicios = $user->servicios;
         //$servicios = Auth::user()->servicios;
