@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::resource('servicios', ServicioController::class);//->middleware('auth');
 
+Route::get('servicios/envia-correo/{servicio}',[ServicioController::class, 'notifica_serviciocreado'])->name('servicios.envia-correo');
+
 Route::get('/landing', function () {
     return view('landing');
 });

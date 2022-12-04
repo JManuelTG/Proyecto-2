@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Servicio;
 use Illuminate\Http\Request;
+use App\Mail\NotificaOrdenCreada;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
 
 class ServicioController extends Controller
 {
@@ -119,6 +121,13 @@ class ServicioController extends Controller
         $this->authorize('delete', $servicio);
         $servicio->delete();
         return redirect('/servicios');
+    }
+
+    public function notifica_serviciocreado(Servicio $servicio)
+    {
+        Mail::to($servicio->user->email)->send(new NotificaOrdenCreada($servicio));
+        return redirect('/servicios');
+
     }
 
 }

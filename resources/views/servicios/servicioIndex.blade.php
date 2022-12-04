@@ -10,6 +10,7 @@
                 <th>Descripcion</th>
                 <th>Editar</th>
                 <th>Eliminar</th>
+                <th>Correo</th>
             </tr>
         </thead>
         @foreach($servicios as $servicio)
@@ -39,6 +40,9 @@
                     </form>
                     @endcan
                 </td>
+                <th>
+                    <a href="{{ route('servicios.envia-correo', $servicio) }}">Enviar Correo</a>
+                </th>
             </tr>
         @endforeach
     </tbody>
