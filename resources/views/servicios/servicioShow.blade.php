@@ -1,4 +1,3 @@
-<a href="/servicios">Index</a>
 <x-template-servicio header="Mostrar Servicio">
     <h2>Servicio: {{ $servicio->id }}</h2>
     <table border="1">
@@ -26,7 +25,7 @@
                     @method('DELETE')
                     <input type="submit" value="Eliminar">
                 </form>
-                    
+
             </td>
         </tr>
     </table>
