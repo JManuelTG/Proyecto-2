@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper">
+        <div class="navbar-fixed">
           <a href="/servicios" class="brand-logo">LFCarry</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/servicios/create">Crear</a></li>
@@ -21,6 +21,7 @@
                     <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition" href="http://proyecto.test/logout" onclick="event.preventDefault();this.closest('form').submit();">Log Out</a>
                 </form>
             </li>
+            <li><a href="http://proyecto.test/login" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
           </ul>
         </div>
       </nav>

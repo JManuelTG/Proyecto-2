@@ -1,16 +1,19 @@
 <x-template-servicio header="Listado de Servicios">
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Juego</th>
-            <th>Plataforma</th>
-            <th>Precio</th>
-            <th>Descripcion</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
+    <table class="centered striped ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Juego</th>
+                <th>Plataforma</th>
+                <th>Precio</th>
+                <th>Descripcion</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
         @foreach($servicios as $servicio)
+        <tbody>
             <tr>
                 <td>
                     <a href=" /servicios/{{$servicio->id}}">
@@ -38,6 +41,7 @@
                 </td>
             </tr>
         @endforeach
+    </tbody>
     </table>
 </x-template-servicio>
 
