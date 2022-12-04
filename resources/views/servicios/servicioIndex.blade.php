@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServiciosIndex</title>
-</head>
-<body>
+<x-template-servicio header="Listado de Servicios">
     <a href="servicios/create">Crear</a>
-    <h1>Listado de servicios</h1>
     <table border="1">
         <tr>
             <th>ID</th>
+            <th>Usuario</th>
             <th>Juego</th>
             <th>Plataforma</th>
             <th>Precio</th>
@@ -26,6 +18,7 @@
                     {{ $servicio->id }}
                 </a>   
             </td>
+            <td>{{ $servicio->user->name }}</td>
             <td>{{ $servicio->juego }}</td>
             <td>{{ $servicio->plataforma }}</td>
             <td>{{ $servicio->precio }}</td>
@@ -44,8 +37,6 @@
         </tr>
         @endforeach
     </table>
-</body>
-</html>
-
+</x-template-servicio>
 
        

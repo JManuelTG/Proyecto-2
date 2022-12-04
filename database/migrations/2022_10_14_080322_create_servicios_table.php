@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('servicios', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->string('plataforma');
             $table->string('juego');
             $table->smallInteger('precio')->unsigned()->default(0);

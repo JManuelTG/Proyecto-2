@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
-</head>
-<body>
-<h1>Crear</h1>
+<x-template-servicio header="Editar Servicio">
     <form action="/servicios/{{$servicio->id}}" method="post">
         @csrf
         @method('patch')
@@ -25,5 +16,4 @@
         <br>
         <input type="submit" value="Guardar">
     </form>
-</body>
-</html>
+</x-template-servicio>

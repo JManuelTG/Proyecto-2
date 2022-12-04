@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Servicio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ServicioController extends Controller
 {
@@ -15,6 +16,9 @@ class ServicioController extends Controller
     public function index()
     {
         $servicios = Servicio::all();
+        // $user = Auth::user();
+        // $servicios = $user->servicios;
+        //$servicios = Auth::user()->servicios;
         return view('servicios.servicioIndex', compact('servicios'));
     }
 
@@ -43,6 +47,7 @@ class ServicioController extends Controller
             'descripcion' => 'required|max:255'
         ]);
 
+        $request->merge(['user_id' => Auth::id()]);
         Servicio::create($request->all());
         return redirect('/servicios');
     }
@@ -104,4 +109,5 @@ class ServicioController extends Controller
         $servicio->delete();
         return redirect('/servicios');
     }
+    
 }

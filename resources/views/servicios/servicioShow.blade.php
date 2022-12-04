@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info Servicio</title>
-</head>
-<body>
-    <a href="/servicios">Index</a>
-    <h1>Servicio</h1>
+<a href="/servicios">Index</a>
+<x-template-servicio header="Mostrar Servicio">
     <h2>Servicio: {{ $servicio->id }}</h2>
     <table border="1">
         <tr>
+            <th>Usuario</th>
             <th>Juego</th>
             <th>Plataforma</th>
             <th>Precio</th>
             <th>Descripcion</th>
             <th>Editar</th>
-            <th>Eliminar</th>2
+            <th>Eliminar</th>
         </tr>
         <tr>
+            <td>{{ $servicio->user->name }}</td>
             <td>{{ $servicio->juego }}</td>
             <td>{{ $servicio->plataforma }}</td>
             <td>{{ $servicio->precio }}</td>
@@ -37,6 +30,4 @@
             </td>
         </tr>
     </table>
-
-</body>
-</html>
+</x-template-servicio>
