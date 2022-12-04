@@ -1,5 +1,5 @@
 <x-template-servicio header="Crear Servicio">
-    <form action="/servicios" method="post">
+    <form action="/servicios/create" method="post">
         @csrf
         <label for="plataforma">Plataforma</label>
         <input type="text" name="plataforma">

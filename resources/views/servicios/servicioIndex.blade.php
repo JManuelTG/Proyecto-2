@@ -1,5 +1,4 @@
 <x-template-servicio header="Listado de Servicios">
-    <a href="servicios/create">Crear</a>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -10,13 +9,13 @@
             <th>Descripcion</th>
             <th>Editar</th>
             <th>Eliminar</th>
-        </tr> 
+        </tr>
         @foreach($servicios as $servicio)
         <tr>
             <td>
                 <a href=" /servicios/{{$servicio->id}}">
                     {{ $servicio->id }}
-                </a>   
+                </a>
             </td>
             <td>{{ $servicio->user->name }}</td>
             <td>{{ $servicio->juego }}</td>
@@ -32,11 +31,10 @@
                     @method('DELETE')
                     <input type="submit" value="Eliminar">
                 </form>
-                
+
             </td>
         </tr>
         @endforeach
     </table>
 </x-template-servicio>
 
-       
