@@ -130,4 +130,11 @@ class ServicioController extends Controller
 
     }
 
+    public function index_personal()
+    {
+        $user = Auth::user();
+        $servicios = $user->servicios;
+        return view('servicios.servicioIndexPersonal', compact('servicios'));
+    }
+
 }

@@ -13,6 +13,7 @@
         <div class="navbar-fixed">
           <a href="/servicios" class="brand-logo">LFCarry</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{ route('servicios.personal') }}">Mis servicios</a></li>
             <li><a href="/servicios/create">Crear</a></li>
             <li>
                 <form method="POST" action="http://proyecto.test/logout" x-data="">

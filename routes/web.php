@@ -22,6 +22,8 @@ Route::resource('servicios', ServicioController::class);//->middleware('auth');
 
 Route::get('servicios/envia-correo/{servicio}',[ServicioController::class, 'notifica_serviciocreado'])->name('servicios.envia-correo');
 
+Route::get('servicios/personal',[ServicioController::class, 'index_personal'])->name('servicios.personal');
+
 Route::get('/landing', function () {
     return view('landing');
 });
