@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ServicioController extends Controller
 {
@@ -78,6 +79,8 @@ class ServicioController extends Controller
      */
     public function edit(Servicio $servicio)
     {
+        $this->authorize('update', $servicio);
+        //Gate::authorize('edita-servicio',$servicio);
         return view('servicios.servicioEdit', compact('servicio'));
     }
 
@@ -113,6 +116,7 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
+        $this->authorize('delete', $servicio);
         $servicio->delete();
         return redirect('/servicios');
     }
